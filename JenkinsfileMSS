@@ -1,4 +1,4 @@
-node('paytm-node'){
+node{
 //node('mss'){
 
   //http://JenkinsServerIPAddress:8080/pipeline-syntax/globals#currentBuild
@@ -19,7 +19,7 @@ node('paytm-node'){
     ])
   ])
   
-  def mavenHome=tool name: "mavenv3.1.1.1", type: "maven"
+  def mavenHome=tool name: "Maven3.6.2", type: "maven"
     
   stage('CheckouttheCode') {
    git branch: 'master', credentialsId: '4d6512c4-c101-4f43-aac5-5860f5d9e20c', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'  
@@ -68,7 +68,7 @@ stage('DeploytoTomcat'){
 
    sshagent(['9554f0b8-eda0-486d-9d23-ce7585c32f70']) 
    {
-     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.235.70.188:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"
+     sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.255.77:/opt/apache-tomcat-9.0.22/webapps/maven-web-application.war"
    }
 }
 */
