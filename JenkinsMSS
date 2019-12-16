@@ -1,0 +1,36 @@
+node('master')
+{
+    
+    def mavenHome = tool name : "Maven3.6.2"
+ stage('gitpull')
+    {
+         
+        git credentialsId: '8c01aec6-372a-42d3-b7dc-2a8884bbf32b', url: 'https://github.com/Abhijit-ops/maven-web-application.git'
+    
+    }
+    
+     stage('build')
+    {
+         
+       sh "${mavenHome}/bin/mvn package"
+    
+    }
+    stage ('SonarQube')
+   {
+    sh "${mavenHome}/bin/mvn sonar:sonar"  
+   }
+     
+    stage ('nexus-Arti-Deploy')
+   {
+    sh "${mavenHome}/bin/mvn deploy"  
+   }
+     
+stage ('DeployTomcat')
+   {
+    sshagent(['beb130c2-f830-43e9-8127-ef4b1e2623cc'])
+        {
+            sh "scp -o StrictHostKeyChecking=no target/maven-web-application.war ec2-user@13.126.255.77:/opt/apache-tomcat-9.0.29/webapps/maven-web-application.war"
+        }  
+   }
+
+ } 
