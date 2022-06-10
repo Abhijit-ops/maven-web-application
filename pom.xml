@@ -98,13 +98,13 @@
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
-	      <url>http://13.127.171.164:8081/repository/Abhijit-Maven-Release/</url>
+	      <url>http://3.85.114.123:8081/repository/Abhijit-Maven-Release/</url>
 	    </repository>
 	  
 	    <snapshotRepository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Snapshot Nexus Repository </name>
-	      <url>http://13.127.171.164:8081/repository/Abhijit-Maven-Snapshot/</url>
+	      <url>http://3.85.114.123:8081/repository/Abhijit-Maven-Snapshot/</url>
 	    </snapshotRepository>
 	  
 	</distributionManagement>
