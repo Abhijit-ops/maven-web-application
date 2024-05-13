@@ -40,7 +40,6 @@ stages:
     steps:        
     - task: PublishBuildArtifacts@1
       inputs:
-        PathtoPublish: 'webapps'
-        ArtifactName: 'drop'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        ArtifactName: 'webapp'
         publishLocation: 'Container'
-        MaxArtifactSize: 500
