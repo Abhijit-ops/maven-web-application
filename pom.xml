@@ -91,20 +91,8 @@
 		</dependency>
                 -->
 	</dependencies>
-
-	<distributionManagement>
-		<repository>
-		<id>webapps</id>
-		<url>https://pkgs.dev.azure.com/joybikbazar/Demo/_packaging/webapps/maven/v1</url>
-		<releases>
-			<enabled>true</enabled>
-		</releases>
-		<snapshots>
-			<enabled>true</enabled>
-		</snapshots>
-		</repository>
 	<!--
-	
+	<distributionManagement>
 	    <repository>
 	      <id>nexus</id>
 	      <name>Mithun Technologies Releases Nexus Repository</name>
