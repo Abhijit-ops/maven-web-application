@@ -30,14 +30,6 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
-- stage: Publish
-  displayName: Publish image
-  jobs:
-  - job: Publish
-    displayName: Publish
-    pool:
-      vmImage: ubuntu-latest
-    steps:        
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
